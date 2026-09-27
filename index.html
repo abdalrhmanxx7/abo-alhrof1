@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مطعم أبو الحروف - أشهى المأكولات والوجبات السريعة">
+    <title>مطعم أبو الحروف | المنيو الإلكتروني</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- شريط التنقل -->
+    <header class="header" id="home">
+        <div class="container nav-container">
+
+            <a href="#home" class="logo">
+                <span class="logo-icon">♨</span>
+                <span>
+                    <strong>أبو الحروف</strong>
+                    <small>مطعم ومأكولات سريعة</small>
+                </span>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home">الرئيسية</a>
+                <a href="#menu">المنيو</a>
+                <a href="#about">عن المطعم</a>
+                <a href="#contact">تواصل معنا</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-button" id="openCartBtn" aria-label="فتح السلة">
+                    <span>🛒</span>
+                    <b>السلة</b>
+                    <em id="cartCount">0</em>
+                </button>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="القائمة">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- الواجهة الرئيسية -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+                <span class="hero-badge">🍔 نكهة تستحق التجربة</span>
+
+                <h1>
+                    أهلاً بكم في<br>
+                    <span>مطعم أبو الحروف</span>
+                </h1>
+
+                <p>
+                    مذاق طيب، وجبات شهية، وخدمة ترضي ذوقك.
+                    اختار وجبتك وخلي الباقي علينا!
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary">
+                        تصفح المنيو <span>←</span>
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        تواصل معنا
+                    </a>
+                </div>
+
+                <div class="hero-features">
+                    <div>
+                        <span>🍽️</span>
+                        <p>وجبات متنوعة</p>
+                    </div>
+                    <div>
+                        <span>🔥</span>
+                        <p>طعم لا يُنسى</p>
+                    </div>
+                    <div>
+                        <span>⚡</span>
+                        <p>خدمة سريعة</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- شريط الأقسام السريع -->
+        <section class="quick-categories">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">اختار ما تشتهي</span>
+                    <h2>أقسام المنيو</h2>
+                </div>
+
+                <div class="category-scroll" id="quickCategories"></div>
+            </div>
+        </section>
+
+        <!-- المنيو -->
+        <section class="menu-section" id="menu">
+            <div class="container">
+
+                <div class="section-heading centered">
+                    <span class="eyebrow">MENU</span>
+                    <h2>منيو أبو الحروف</h2>
+                    <p>كل اللي تحبه بمكان واحد</p>
+                </div>
+
+                <div class="menu-tools">
+                    <div class="search-box">
+                        <span>⌕</span>
+                        <input
+                            type="search"
+                            id="searchInput"
+                            placeholder="ابحث عن وجبتك المفضلة..."
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <div class="filter-wrapper">
+                        <button class="filter-btn active" data-filter="all">
+                            الكل
+                        </button>
+                        <div id="filterButtons"></div>
+                    </div>
+                </div>
+
+                <div id="menuContainer"></div>
+
+                <div class="no-results" id="noResults" hidden>
+                    <span>🍽️</span>
+                    <h3>ما لكينا هالوجبة</h3>
+                    <p>جرب تبحث عن صنف ثاني.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- عن المطعم -->
+        <section class="about-section" id="about">
+            <div class="container about-grid">
+
+                <div class="about-image">
+                    <img
+                        src="images/mtam.jpg"
+                        alt="أجواء مطعم"
+                        loading="lazy"
+                    >
+                    <div class="about-badge">
+                        <strong>أبو الحروف</strong>
+                        <span>طعم يجمعنا</span>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <span class="eyebrow">من نحن</span>
+                    <h2>طعم طيب<br>وخدمة من القلب ❤️</h2>
+                    <p>
+                        في مطعم أبو الحروف نسعى نقدم لكم وجبات شهية
+                        بطعم تحبوه، مع تنوع بالاختيارات وأسعار مناسبة.
+                    </p>
+
+                    <div class="about-points">
+                        <div>
+                            <span>✓</span>
+                            <p>تشكيلة متنوعة من الوجبات</p>
+                        </div>
+                        <div>
+                            <span>✓</span>
+                            <p>طلب سهل وسريع عبر واتساب</p>
+                        </div>
+                        <div>
+                            <span>✓</span>
+                            <p>خدمة توصيل متوفرة</p>
+                        </div>
+                    </div>
+
+                    <a href="#menu" class="btn btn-primary">
+                        اطلب وجبتك الآن
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- معلومات المطعم -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+
+                <div class="section-heading centered">
+                    <span class="eyebrow">CONTACT</span>
+                    <h2>تواصل ويانا</h2>
+                    <p>نحن بانتظار طلباتكم واستفساراتكم</p>
+                </div>
+
+                <div class="contact-grid">
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>العنوان</h3>
+                        <p>الغزالية، مدير الأمن<br>مقابل جامع البر الرحيم</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3>اتصل بنا</h3>
+                        <a href="tel:07702760390">0770 276 0390</a>
+                        <a href="tel:07745948193">0774 594 8193</a>
+                        <a href="tel:07513107821">0751 310 7821</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">🛵</div>
+                        <h3>التوصيل</h3>
+                        <p>التوصيل حسب المنطقة</p>
+                        <strong>رسوم التوصيل: 500 دينار</strong>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <span class="logo-icon">♨</span>
+                    <span>
+                        <strong>أبو الحروف</strong>
+                        <small>مطعم ومأكولات سريعة</small>
+                    </span>
+                </a>
+                <p>طعم يجمعنا ❤️</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <a href="#home">الرئيسية</a>
+                <a href="#menu">المنيو</a>
+                <a href="#contact">تواصل معنا</a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>معلومات التواصل</h4>
+                <p>📍 الغزالية، بغداد</p>
+                <p>📞 0770 276 0390</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="currentYear"></span> مطعم أبو الحروف - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+   
+
+    <!-- زر العودة للأعلى -->
+    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">
+        ↑
+    </button>
+
+    <!-- خلفية السلة -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- السلة الجانبية -->
+    <aside class="cart-sidebar" id="cartSidebar" aria-label="سلة الطلب">
+
+        <div class="cart-header">
+            <div>
+                <span class="eyebrow">YOUR ORDER</span>
+                <h2>سلة طلبك 🛒</h2>
+            </div>
+
+            <button class="close-cart" id="closeCartBtn" aria-label="إغلاق السلة">
+                ×
+            </button>
+        </div>
+
+        <div class="cart-body" id="cartItems">
+            <div class="empty-cart">
+                <span>🛒</span>
+                <h3>السلة فارغة</h3>
+                <p>أضف وجباتك المفضلة حتى تظهر هنا.</p>
+                <button class="btn btn-primary" id="startShoppingBtn">
+                    تصفح المنيو
+                </button>
+            </div>
+        </div>
+
+        <div class="cart-footer" id="cartFooter" >
+<!-- معلومات الزبون -->
+<div class="customer-form">
+
+    <h3>معلومات التوصيل</h3>
+
+    <div class="form-group">
+        <label for="customerPhone">رقم هاتف الزبون *</label>
+        <input
+            type="tel"
+            id="customerPhone"
+            placeholder="مثلاً: 07701234567"
+            autocomplete="tel"
+            required
+        >
+    </div>
+
+    <div class="form-group">
+        <label for="customerArea">المنطقة *</label>
+        <input
+            type="text"
+            id="customerArea"
+            placeholder="اكتب منطقتك"
+            autocomplete="address-level2"
+            required
+        >
+    </div>
+
+    <div class="form-group">
+        <label for="customerNotes">ملاحظات الطلب</label>
+        <textarea
+            id="customerNotes"
+            rows="3"
+            placeholder="مثلاً: بدون بصل، أو تفاصيل إضافية..."
+        ></textarea>
+    </div>
+
+</div>
+            <div class="cart-summary">
+                <div>
+                    <span>المجموع الفرعي</span>
+                    <strong id="subtotal">0 د.ع</strong>
+                </div>
+
+                <div>
+                    <span>التوصيل</span>
+                    <strong id="deliveryFee">500 د.ع</strong>
+                </div>
+
+                <div class="total-row">
+                    <span>المجموع الكلي</span>
+                    <strong id="totalPrice">500 د.ع</strong>
+                </div>
+            </div>
+
+            <div id="restaurantStatus" class="restaurant-status"></div>
+
+<button class="btn btn-whatsapp btn-block" id="checkoutBtn">
+    <span>◉</span>
+    إرسال الطلب عبر واتساب
+</button>
+
+        </div>
+
+    </aside>
+
+    <!-- نافذة تفاصيل الصنف -->
+    <div class="modal-overlay" id="productModal">
+        <div class="product-modal">
+
+            <button class="modal-close" id="closeModalBtn">×</button>
+
+            <div class="modal-image">
+                <img id="modalImage" src="" alt="">
+            </div>
+
+            <div class="modal-content">
+                <span class="eyebrow" id="modalCategory"></span>
+                <h2 id="modalName"></h2>
+                <p id="modalDescription"></p>
+                <strong class="modal-price" id="modalPrice"></strong>
+
+                <div class="quantity-selector large">
+                    <button id="modalMinus">−</button>
+                    <span id="modalQuantity">1</span>
+                    <button id="modalPlus">+</button>
+                </div>
+
+                <button class="btn btn-primary btn-block" id="modalAddBtn">
+                    أضف للسلة
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- إشعار -->
+    <div class="toast" id="toast">
+        <span>✓</span>
+        <p id="toastMessage">تمت الإضافة للسلة</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
